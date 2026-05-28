@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: /test
+        working-directory: ./test
     
     steps:
       - name: Checkout
@@ -23,6 +23,6 @@ jobs:
       - name: Запуск сервера и тестов Cypress
         uses: cypress-io/github-action@v6
         with:
-          working-directory: /
+          working-directory: ./cypress
           start: npx http-server . -p 3000
           wait-on: "http://localhost:3000"
